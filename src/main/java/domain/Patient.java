@@ -1,13 +1,22 @@
 package domain;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Objects;
 
+@Entity
 public class Patient {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(nullable = false, unique = true)
     private int patientId;
+    @Column(nullable = false, unique = true)
     private String name;
+    @Column(nullable = false, unique = true)
     private String surname;
+    @Column(nullable = false, unique = true)
     private LocalDate dateOfBirth;
+    @Enumerated(EnumType.STRING)
     private Gender gender;
 
     public int getPatientId() {

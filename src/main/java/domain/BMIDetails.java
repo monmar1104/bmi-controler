@@ -1,10 +1,18 @@
 package domain;
 
-public class BMIDetails {
+import javax.persistence.*;
 
+@Entity
+public class BMIDetails {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(nullable = false, unique = true)
     private int bmiDetailsId;
+    @OneToOne
     Patient patient;
+    @Column(nullable = false)
     private double weight;
+    @Column(nullable = false)
     private double height;
     private double bmi;
 
