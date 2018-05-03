@@ -33,10 +33,6 @@ public class AddPatientServlet extends HttpServlet {
 
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("user-added.jsp");
         requestDispatcher.forward(request, response);
-
-
-
-
     }
 
     public Gender getGenderFromString(String gender){
