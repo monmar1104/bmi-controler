@@ -1,0 +1,21 @@
+body {
+    background-image: url("background.jpg");
+    background-size: cover;
+}
+
+modal-backdrop {
+    background-color: transparent !important;
+}
+
+.dot {
+    text-align: center;
+    height: 50px;
+    width: 90px;
+    background-color: rosybrown;
+    border-radius: 50%;
+    /*display: inline-block;*/
+}
+
+.formFrame {
+    border: darkblue;
+}

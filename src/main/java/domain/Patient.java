@@ -10,14 +10,16 @@ public class Patient {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false, unique = true)
     private int patientId;
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String name;
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String surname;
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private LocalDate dateOfBirth;
     @Enumerated(EnumType.STRING)
     private Gender gender;
+    @Column(nullable = false,unique = true)
+    private String email;
 
     public int getPatientId() {
         return patientId;
@@ -53,6 +55,14 @@ public class Patient {
 
     public Gender getGender() {
         return gender;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public void setGender(Gender gender) {
