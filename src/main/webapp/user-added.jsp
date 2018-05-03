@@ -24,25 +24,8 @@
     <br/>
     <br/>
     <br/>
-    <%@include file="navbar.jsp" %>
-    <br/>
-    <br/>
-    <h5>Dodaj użytkownika</h5>
-    <br/>
-    <div class="formFrame">
-        <form action="add-patient" method="post">
-            Imię: <input type="text" minlength="3" name="name"><br/><br/>
-            Nazwisko: <input type="text" minlength="3" name="surname"><br/><br/>
-            Email: <input type="email" name="email"><br/><br/>
-            Płeć: <select name="gender" required>
-            <option>---Wybierz płeć---</option>
-            <option value="woman">kobieta</option>
-            <option value="man">mężczyzna</option>
-        </select><br/><br/>
-            Data urodzenia: <input type="date" name="dateOfBirth"><br/><br/>
-            <button type="submit" formaction="add-patient">Zapisz</button>
-        </form>
-    </div>
+    <%@include file="navbar.jsp"%>
+ <h2>Dodano użytkownika</h2>
 </div>
 
 </body>

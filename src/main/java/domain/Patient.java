@@ -21,6 +21,16 @@ public class Patient {
     @Column(nullable = false,unique = true)
     private String email;
 
+    public Patient(){}
+
+    public Patient(String name, String surname, String email, LocalDate dateOfBirth, Gender gender) {
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+        this.dateOfBirth = dateOfBirth;
+        this.gender = gender;
+    }
+
     public int getPatientId() {
         return patientId;
     }
