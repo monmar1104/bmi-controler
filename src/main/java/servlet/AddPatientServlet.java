@@ -27,7 +27,11 @@ public class AddPatientServlet extends HttpServlet {
         String email = request.getParameter("email");
         Gender gender  = getGenderFromString(request.getParameter("gender"));
         LocalDate dateOfBirth = LocalDate.parse(request.getParameter("dateOfBirth"));
-
+        if(patientService.isEmailExist(email)){
+            request.setAttribute("emeilExistMessage", "Podany adres Email juz istnieje!");
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("add-patient.jsp");
+            requestDispatcher.forward(request, response);
+        }
         Patient patient = new Patient(name, surname, email, dateOfBirth, gender);
         patientService.addPatient(patient);
 

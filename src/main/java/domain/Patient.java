@@ -5,6 +5,9 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity
+@NamedQueries({
+        @NamedQuery(name = "getPatientByEmail", query = "from Patient where email=:email")
+})
 public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

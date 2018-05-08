@@ -14,5 +14,8 @@ public class PatientRepository {
     public void addPatient(Patient patient){
         entityManager.persist(patient);
     }
+    public Patient getPatientByEmail(String email){
+        return (Patient) entityManager.createNamedQuery("getPatientByEmail").setParameter("email",email).getResultList().stream().findFirst().orElse(null);
+    }
 
 }

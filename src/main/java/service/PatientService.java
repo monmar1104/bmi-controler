@@ -15,4 +15,9 @@ public class PatientService implements PatientServiceLocal {
     public void addPatient(Patient patient){
         patientRepository.addPatient(patient);
     }
+
+    @Override
+    public boolean isEmailExist(String email) {
+        return patientRepository.getPatientByEmail(email)!=null;
+    }
 }

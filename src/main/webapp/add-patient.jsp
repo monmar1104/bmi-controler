@@ -33,7 +33,7 @@
         <form action="add-patient" method="post">
             Imię: <input type="text" minlength="3" name="name"><br/><br/>
             Nazwisko: <input type="text" minlength="3" name="surname"><br/><br/>
-            Email: <input type="email" name="email"><br/><br/>
+            Email: <input type="email" name="email"> <span style="color: red"> ${emeilExistMessage}</span><br/><br/>
             Płeć: <select name="gender" required>
             <option>---Wybierz płeć---</option>
             <option value="woman">kobieta</option>
