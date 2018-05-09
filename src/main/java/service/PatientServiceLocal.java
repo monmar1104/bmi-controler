@@ -8,4 +8,5 @@ import javax.ejb.Local;
 public interface PatientServiceLocal {
     void addPatient(Patient patient);
     boolean isEmailExist(String email);
+    String getHexPassword(String password);
 }

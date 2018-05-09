@@ -1,6 +1,7 @@
 package service;
 
 import domain.Patient;
+import org.jboss.crypto.CryptoUtil;
 import repository.PatientRepository;
 
 import javax.ejb.Stateless;
@@ -19,5 +20,10 @@ public class PatientService implements PatientServiceLocal {
     @Override
     public boolean isEmailExist(String email) {
         return patientRepository.getPatientByEmail(email)!=null;
+    }
+
+    @Override
+    public String getHexPassword(String password) {
+        return CryptoUtil.createPasswordHash("MD5", "hex", null, null, password);
     }
 }

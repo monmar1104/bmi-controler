@@ -34,15 +34,38 @@
             Imię: <input type="text" minlength="3" name="name"><br/><br/>
             Nazwisko: <input type="text" minlength="3" name="surname"><br/><br/>
             Email: <input type="email" name="email"> <span style="color: red"> ${emeilExistMessage}</span><br/><br/>
-            Płeć: <select name="gender" required>
-            <option>---Wybierz płeć---</option>
-            <option value="woman">kobieta</option>
-            <option value="man">mężczyzna</option>
+            Hasło: <input size="50" name="password" id="password" type="password"
+                                              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+                                              title="Password must contain at least 6 characters, including UPPER/lowercase and numbers."
+                                              required/>
+            <br/><br/>
+            Powtórz hasło: <input size="40" name="confirm_password" id="confirm_password"
+                                                      type="password" required/>
+            <br/><br/>
+        Płeć: <select name="gender" required>
+        <option>---Wybierz płeć---</option>
+        <option value="woman">kobieta</option>
+        <option value="man">mężczyzna</option>
         </select><br/><br/>
-            Data urodzenia: <input type="date" name="dateOfBirth"><br/><br/>
-            <button type="submit" formaction="add-patient">Zapisz</button>
+        Data urodzenia: <input type="date" name="dateOfBirth"><br/><br/>
+        <button type="submit" formaction="add-patient">Zapisz</button>
         </form>
     </div>
+    <script>
+        var password = document.getElementById("password")
+            , confirm_password = document.getElementById("confirm_password");
+
+        function validatePassword() {
+            if (password.value != confirm_password.value) {
+                confirm_password.setCustomValidity("Hasła nie są zgodne");
+            } else {
+                confirm_password.setCustomValidity('');
+            }
+        }
+
+        password.onchange = validatePassword;
+        confirm_password.onkeyup = validatePassword;
+    </script>
 </div>
 
 </body>

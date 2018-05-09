@@ -25,6 +25,7 @@ public class AddPatientServlet extends HttpServlet {
         String name = request.getParameter("name");
         String surname = request.getParameter("surname");
         String email = request.getParameter("email");
+        String password = request.getParameter("password");
         Gender gender  = getGenderFromString(request.getParameter("gender"));
         LocalDate dateOfBirth = LocalDate.parse(request.getParameter("dateOfBirth"));
         if(patientService.isEmailExist(email)){
@@ -32,7 +33,7 @@ public class AddPatientServlet extends HttpServlet {
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("add-patient.jsp");
             requestDispatcher.forward(request, response);
         }
-        Patient patient = new Patient(name, surname, email, dateOfBirth, gender);
+        Patient patient = new Patient(name, surname, email, patientService.getHexPassword(password), dateOfBirth, gender);
         patientService.addPatient(patient);
 
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("user-added.jsp");

@@ -23,13 +23,16 @@ public class Patient {
     private Gender gender;
     @Column(nullable = false,unique = true)
     private String email;
+    @Column(nullable = false)
+    private String password;
 
     public Patient(){}
 
-    public Patient(String name, String surname, String email, LocalDate dateOfBirth, Gender gender) {
+    public Patient(String name, String surname, String email, String password, LocalDate dateOfBirth, Gender gender) {
         this.name = name;
         this.surname = surname;
         this.email = email;
+        this.password = password;
         this.dateOfBirth = dateOfBirth;
         this.gender = gender;
     }
@@ -80,6 +83,14 @@ public class Patient {
 
     public void setGender(Gender gender) {
         this.gender = gender;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override
