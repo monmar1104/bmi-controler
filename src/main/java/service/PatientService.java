@@ -1,6 +1,7 @@
 package service;
 
 import domain.Patient;
+import domain.Roles;
 import org.jboss.crypto.CryptoUtil;
 import repository.PatientRepository;
 
@@ -13,8 +14,8 @@ public class PatientService implements PatientServiceLocal {
     PatientRepository patientRepository;
 
     @Override
-    public void addPatient(Patient patient){
-        patientRepository.addPatient(patient);
+    public void addPatient(Patient patient, Roles roles){
+        patientRepository.addPatient(patient, roles);
     }
 
     @Override

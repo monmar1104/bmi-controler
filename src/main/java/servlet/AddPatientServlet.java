@@ -3,6 +3,7 @@ package servlet;
 
 import domain.Gender;
 import domain.Patient;
+import domain.Roles;
 import service.PatientServiceLocal;
 
 import javax.inject.Inject;
@@ -34,7 +35,8 @@ public class AddPatientServlet extends HttpServlet {
             requestDispatcher.forward(request, response);
         }
         Patient patient = new Patient(name, surname, email, patientService.getHexPassword(password), dateOfBirth, gender);
-        patientService.addPatient(patient);
+        Roles roles = new Roles(email, "admin", "admin");
+        patientService.addPatient(patient, roles);
 
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("user-added.jsp");
         requestDispatcher.forward(request, response);

@@ -7,7 +7,7 @@
                 <h4 class="modal-title">LOGIN</h4>
             </div>
             <div class="modal-body">
-                <form method="post" action="#">
+                <form method="post" action="login">
                     <input type="hidden" name="token" value="${authToken}"/>
                     <div class="form-group">
                         <label for="login">Login</label>

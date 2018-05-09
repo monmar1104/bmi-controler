@@ -17,7 +17,8 @@
     <web-resource-collection>
       <web-resource-name>HtmlAuth</web-resource-name>
       <description>application security constraints</description>
-      <url-pattern>/add-patient.jsp</url-pattern>
+      <!--<url-pattern>/add-patient.jsp</url-pattern>-->
+      <url-pattern>/index.jsp</url-pattern>
       <http-method>GET</http-method>
       <http-method>POST</http-method>
     </web-resource-collection>
@@ -29,7 +30,7 @@
   <login-config>
     <auth-method>FORM</auth-method>
     <form-login-config>
-      <form-login-page>/login.jsp</form-login-page>
+      <form-login-page>/index.jsp</form-login-page>
       <form-error-page>/index.jsp</form-error-page>
     </form-login-config>
   </login-config>
