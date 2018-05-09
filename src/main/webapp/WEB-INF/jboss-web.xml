@@ -6,5 +6,5 @@
 http://www.jboss.com/xml/ns/javaee
 http://www.jboss.org/j2ee/schema/jboss-web_11_0.xsd" >
     <context-root>/bmi-controler</context-root>
-    <!--<security-domain>WDYWSecurityDomain</security-domain>-->
+    <security-domain>BMISecurityDomain</security-domain>
 </jboss-web>
