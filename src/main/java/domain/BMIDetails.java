@@ -8,13 +8,22 @@ public class BMIDetails {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false, unique = true)
     private int bmiDetailsId;
-    @OneToOne
+    @ManyToOne
     Patient patient;
     @Column(nullable = false)
     private double weight;
     @Column(nullable = false)
     private double height;
     private double bmi;
+
+    public BMIDetails(){}
+
+    public BMIDetails(Patient patient, Double weight, Double height, Double bmi) {
+        this.patient = patient;
+        this.weight = weight;
+        this.height = height;
+        this.bmi = bmi;
+    }
 
     public int getBmiDetailsId() {
         return bmiDetailsId;
