@@ -40,5 +40,88 @@
     </div>
     </div>
 
+<script>
+    var line = new RGraph.Line({
+        id: 'cvs',
+        data: [4,8,6,5,3,2,2,5],
+        options: {
+            hmargin: 5,
+            noaxes: true,
+            ylabels: false,
+            gutterLeft: 150,
+            colors: ['black'],
+            tooltips: ['James','Jenna','Karl','Olga','Mark','Pete','Louise','Jack'],
+            linewidth: 3,
+            spline: true
+        }
+    }).draw();
+
+
+    var line2 = new RGraph.Line({
+        id: 'cvs',
+        data: [50,60,57,85,45,23,56,56],
+        options: {
+            hmargin: 5,
+            noaxes: true,
+            ylabels: false,
+            gutterLeft: 150,
+            colors: ['red'],
+            tooltips: ['James','Jenna','Karl','Olga','Mark','Pete','Louise','Jack'],
+            linewidth: 3,
+            spline: true,
+            backgroundGrid: false
+        }
+    }).draw();
+
+
+    var line3 = new RGraph.Line({
+        id: 'cvs',
+        data: [12,13,15,16,18,13,15,12],
+        options: {
+            hmargin: 5,
+            noaxes: true,
+            ylabels: false,
+            gutterLeft: 150,
+            colors: ['green'],
+            tooltips: ['James','Jenna','Karl','Olga','Mark','Pete','Louise','Jack'],
+            linewidth: 3,
+            spline: true,
+            backgroundGrid: false
+        }
+    }).draw();
+
+    var yaxis = new RGraph.Drawing.YAxis({
+        id: 'cvs',
+        x: line.gutterLeft,
+        options: {
+            max: line.scale2.max,
+            title: 'Widgets sold',
+            colors: ['black']
+        }
+    }).draw();
+
+    var yaxis2 = new RGraph.Drawing.YAxis({
+        id: 'cvs',
+        x: line.gutterLeft * (2/3),
+        options: {
+            max: line2.scale2.max,
+            title: 'Outside mean temperature',
+            colors: ['red']
+        }
+    }).draw();
+
+    var yaxis3 = new RGraph.Drawing.YAxis({
+        id: 'cvs',
+        x: line.gutterLeft / 3,
+        options: {
+            max: line3.scale2.max,
+            title: 'Rainfall measured by the MET office',
+            tooltips: ['Rainfall measured by the MET office'],
+            colors: ['green'],
+            numlabels: 10
+        }
+    }).draw();
+</script>
+
 </body>
 </html>
