@@ -2,7 +2,7 @@
     <div class="nav-item w-25 dot">
         <a title="Oblicz BMI"
             class="nav-link"
-           href="/file-upload.jsp"><i
+           href="add-bmi-details.jsp"><i
                 class="icon-barcode"></i> <span class="d-none d-lg-inline-block">
            Oblicz BMI</span></a>
     </div>

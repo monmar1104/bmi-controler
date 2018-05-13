@@ -1,6 +1,7 @@
 package domain;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 public class BMIDetails {
@@ -15,6 +16,7 @@ public class BMIDetails {
     @Column(nullable = false)
     private double height;
     private double bmi;
+    private LocalDate date;
 
     public BMIDetails(){}
 
